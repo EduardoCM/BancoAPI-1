@@ -28,7 +28,7 @@ public class DisenoTarjetaController {
 	 * @return
 	 */
 	@GetMapping
-	public List<DisenoTarjetas> getAllTarjetas(){
+	public List<DisenoTarjetas> getAllDisenoTarjetas(){
 		return disenoTarjetaRepository.obtenerRegistrosTarjetas();
 	}
 	
@@ -38,7 +38,7 @@ public class DisenoTarjetaController {
 	 * @return
 	 */
 	@PostMapping
-	public DisenoTarjetas addCliente (@RequestBody DisenoTarjetas disenoTarjetas) {
+	public DisenoTarjetas addDisenoTarjetas (@RequestBody DisenoTarjetas disenoTarjetas) {
 		return disenoTarjetaRepository.crearDisenoTarjeta(disenoTarjetas);
 	}
 	
@@ -48,7 +48,7 @@ public class DisenoTarjetaController {
 	 * @return
 	 */
 	@DeleteMapping("/{idTarjeta}")
-	public Long deleteCliente (@PathVariable(name = "idTarjeta") Long idTarjeta) {
+	public Long deleteDisenoTarjetas (@PathVariable(name = "idTarjeta") Long idTarjeta) {
 		return disenoTarjetaRepository.eliminarDisenoTarjeta(idTarjeta);
 	}
 }
