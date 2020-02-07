@@ -3,8 +3,11 @@ package com.praxis.banco.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.praxis.banco.domain.Organico;
 
+@Repository
 public class OrganicoRepositoryImpl implements OrganicoRepository {
 
 	//Lista estatica del producto

@@ -11,28 +11,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.praxis.banco.domain.Organico;
-import com.praxis.banco.service.OrganicoService;
+import com.praxis.banco.domain.SexShop;
+import com.praxis.banco.service.SexShopService;
 
 @RestController
-@RequestMapping("/api/v1/organico")
-public class OrganicoController {
-	
+@RequestMapping("/api/v1/sexshop")
+public class SexShopController {
+
 	@Autowired
-	private OrganicoService organicoService;
-	
-	@GetMapping
-	public List<Organico> getAll(){
-		return organicoService.obtenerTodo();
-	}
+	private SexShopService service;
+
 	@PostMapping
-	public Organico addOrganico (@RequestBody Organico organico) {
-		return 	organicoService.crearOrganico(organico);
-	}
-	
-	@DeleteMapping("/{idOrganico}")
-	public Long removeOrganico(@PathVariable (name="idOrganico") Long idOrganico) {
-		return organicoService.eliminarOrganico(idOrganico);
+	public SexShop crearProducto(@RequestBody SexShop product) {
+		return service.crearCliente(product);
 	}
 
+	@GetMapping
+	public List<SexShop> getAll() {
+		return service.obtenerTodo();
+	}
+
+	@DeleteMapping("/{idProducto}")
+	public Long eliminarProducto(@PathVariable(name = "idProducto") Long idProducto) {
+		System.out.println("Id:::: " + idProducto);
+		service.eliminarProducto(idProducto);
+		return idProducto;
+	}
 }
