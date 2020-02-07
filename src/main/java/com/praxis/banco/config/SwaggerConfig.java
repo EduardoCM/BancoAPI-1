@@ -62,7 +62,11 @@ public class SwaggerConfig implements Serializable {
 	 */
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Cliente Service").description("CRUD Clientes").version("1.0")
+<<<<<<< HEAD
 				.contact(new Contact("Alejandro Martínez Cruz", " ", "amcr@praxis.com")).build();
+=======
+				.contact(new Contact("Carlos Rodea Cruz", " ", "ccar@praxisglobe.com")).build();
+>>>>>>> 38208c6aa391dc42d881b1dcb13e2abce1ab966f
 	}
 
 }
