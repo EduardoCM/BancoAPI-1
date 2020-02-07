@@ -1,5 +1,6 @@
 package com.praxis.banco.config;
 
+
 import java.io.Serializable;
 
 import org.springframework.context.annotation.Bean;
@@ -51,7 +52,7 @@ public class SwaggerConfig implements Serializable {
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).useDefaultResponseMessages(Boolean.FALSE).select()
-				.apis(RequestHandlerSelectors.basePackage("com.praxis.banco.controler"))
+				.apis(RequestHandlerSelectors.basePackage("mx.santander.liquidez.controller"))
 				.paths(PathSelectors.any()).build().apiInfo(apiInfo());
 	}
 
@@ -61,15 +62,8 @@ public class SwaggerConfig implements Serializable {
 	 * @return apiInfo con la informacion de la construccion del API.
 	 */
 	private ApiInfo apiInfo() {
-<<<<<<< HEAD
-		return new ApiInfoBuilder().title("Cliente Service").description("CRUD Clientes").version("1.0")
-
-				.contact(new Contact("Alejandro Martínez Cruz", " ", "amcr@praxis.com")).build();
-=======
-		return new ApiInfoBuilder().title("Clientes Service").description("CRUD de Clientes").version("1.0")
-				.contact(new Contact("Ulises Gaspar Bautista", " ", "gabu@praxis.com.mx")).build();
->>>>>>> 3b7a3021c3d3254bdcf82aaaa98605c24287dcd5
-
+		return new ApiInfoBuilder().title("Perfilamiento Service").description("CRUD perfilamiento").version("1.0")
+				.contact(new Contact("Eduardo Castillo Mendoza", " ", "edca@praxis.com.mx")).build();
 	}
 
 }
