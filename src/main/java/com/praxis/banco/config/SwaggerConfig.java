@@ -52,7 +52,7 @@ public class SwaggerConfig implements Serializable {
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).useDefaultResponseMessages(Boolean.FALSE).select()
-				.apis(RequestHandlerSelectors.basePackage("mx.santander.liquidez.controler"))
+				.apis(RequestHandlerSelectors.basePackage("com.praxis.banco.controler"))
 				.paths(PathSelectors.any()).build().apiInfo(apiInfo());
 	}
 
